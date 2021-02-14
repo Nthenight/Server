@@ -1,3 +1,4 @@
+// 创建服务器架构
 const express = require('express');
 const app = express();
 app.listen(2000);
