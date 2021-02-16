@@ -31,7 +31,7 @@ home.get('/', async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   const value = req.query.type;
   const n = req.query.page;
-  const goodsdata = await Goods.find({ type: value }).skip(10*n).limit(10*n);
+  const goodsdata = await Goods.find({ type: value }).skip(30*n).limit(30);
   res.send(goodsdata)
 })
 
