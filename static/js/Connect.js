@@ -2,7 +2,7 @@
 const homedata = require('../../databaselink/HomeDataLink')
 const homeslide = homedata.Slide;
 const homerecommend = homedata.Recommend;
-const homegoods = homedata.Goods;
+const homegoods = homedata.Good;
 
 
 module.exports = {

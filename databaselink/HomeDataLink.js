@@ -4,7 +4,7 @@ const mongo = require('../server/mongodblink/MongoDBLink');
 const mongoose = require('mongoose');
 const mongodblink = mongo.mongodblink;
 // 创建数据库
-const link = 'mongodb://localhost/homedata'
+const link = 'mongodb://localhost/shopdata'
 mongodblink(link);
 // 创建数据库规则
 const SlideSchema = new mongoose.Schema({
@@ -20,7 +20,7 @@ const RecommendSchema = new mongoose.Schema({
   },
   link: String
 });
-const GoodsSchema = new mongoose.Schema({
+const GoodSchema = new mongoose.Schema({
   type:String,
   img: String,
   link:String,
@@ -50,12 +50,12 @@ const ListShema = new mongoose.Schema({
 // 使用规则
 const Slide = mongoose.model('Slide', SlideSchema);
 const Recommend = mongoose.model('Recommend', RecommendSchema);
-const Goods = mongoose.model('Goods', GoodsSchema);
+const Good = mongoose.model('Good', GoodSchema);
 // 添加数据
-// Goods.create({img:1}).then(result=>{console.log(result)})
+// Goods.create({type:'pop',price:123}).then(result=>{console.log(result)})
 
 module.exports = {
   Slide,
   Recommend,
-  Goods
+  Good
 }
