@@ -17,10 +17,8 @@ detail.get('/', async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
 //  获取id
   const valueId = req.query.id;
-  // console.log(valueId)
-  // 搜索符合id的数据
-  const data = await Good.find({_id:valueId});
-  res.send(data);
+  const data = await Good.find({ _id: valueId }).populate('param');
+  res.send(data)
 })
 
 

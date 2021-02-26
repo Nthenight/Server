@@ -7,10 +7,13 @@ const mongodblink = mongo.mongodblink;
 const link = 'mongodb://localhost/shopdata'
 mongodblink(link);
 // 创建数据库规则
+
+// 轮播图规则
 const SlideSchema = new mongoose.Schema({
   url: String,
   link:String
 });
+// 推荐栏规则
 const RecommendSchema = new mongoose.Schema({
   img: String,
   title:{
@@ -20,6 +23,7 @@ const RecommendSchema = new mongoose.Schema({
   },
   link: String
 });
+// 商品规则
 const GoodSchema = new mongoose.Schema({
   type:String,
   img: String,
@@ -29,33 +33,41 @@ const GoodSchema = new mongoose.Schema({
   },
   price: {
     type:Number
-  }
-});
-// 创建外键
-const ListShema = new mongoose.Schema({
-  pop: {
+  },
+  // 创建商品参数的外键
+  param: {
     type: mongoose.SchemaTypes.ObjectId,
     // 要关联的集合名称
-    ref:''
+    ref:'ItemData'
   },
-  news: {
-    type: mongoose.SchemaTypes.ObjectId,
-    ref:''
-  },
-  sell: {
-    type: mongoose.SchemaTypes.ObjectId,
-    ref:''
+  comment: {
+    type:Array
   }
+});
+// 创建商品参数数据规则
+const ItemDataShame = new mongoose.Schema({
+  itemName: String,
+  itemNumber: String,
+  itemWeight: String,
+  itemRAM: String,
+  itemType: String,
+  itemCPU: String,
+  itemIPS: String,
+  itemSSD: String,
+  itemColor: String,
+  itemStore: String,
 })
-// 使用规则
+// 使用规则(创建表单)
 const Slide = mongoose.model('Slide', SlideSchema);
 const Recommend = mongoose.model('Recommend', RecommendSchema);
 const Good = mongoose.model('Good', GoodSchema);
+const ItemData = mongoose.model('ItemData', ItemDataShame);
 // 添加数据
-// Goods.create({type:'pop',price:123}).then(result=>{console.log(result)})
+
 
 module.exports = {
   Slide,
   Recommend,
-  Good
+  Good,
+  ItemData,
 }

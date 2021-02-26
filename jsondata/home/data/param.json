@@ -1,0 +1,4 @@
+[{"itemName":"商品名称：AppleiPhone 12","itemNumber":"商品编号：100009077475","itemStore":"机身存储：128GB","itemOS":"操作系统：iOS(Apple)","itemCPU":"CPU型号：其他","itemRAM":"运行内存：其他"},
+  {"itemName":"商品名称：联想小新Air14","itemNumber":"商品编号：100011386554","itemWeight":"商品毛重：2.18kg","itemType":"类型：轻薄笔记本","itemRAM":"内存容量：16G","itemCPU":"处理器：Intel i5","itemIPS":"机身材质：金属材质","itemSSD":"固态硬盘（SSD）：512GB","itemColor":"颜色：银色"},
+  {"itemName":"商品名称：神舟战神","itemColor":"颜色：黑色","itemNumber":"商品编号：100014670726","itemIPS":"机身材质：复合材质","itemRAM":"内存容量：8G","itemCPU":"处理器：Intel i5","itemWeight":"商品毛重：3.4kg","itemType":"类型：游戏笔记本","itemSSD":"固态硬盘（SSD）：512GB"}
+]
