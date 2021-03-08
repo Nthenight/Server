@@ -9,17 +9,15 @@ const express = require('express');
 const Good = connect.homegoods;
 // 实现服务器路由
 const app = serve.app;
-const detail = express.Router(); 
+const search = express.Router(); 
 // 创建多级路由
-app.use('/index/detail', detail);
+app.use('/index/search', search);
 
-detail.get('/', async (req, res) => {
+search.get('/', async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-//  获取id
-  const valueId = req.query.id;
-  // console.log(res.query)
-  const data = await Good.find({ _id: valueId }).populate('param');
-  // const data = await Good.find();
+//  获取
+  const value = req.query.content;
+  const data = await Good.find({ content: { $regex: '.*' + value + '.*' } });
   res.send(data)
 })
 
